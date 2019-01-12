@@ -1,14 +1,14 @@
-%define		kdeappsver	18.12.0
+%define		kdeappsver	18.12.1
 %define		qtver		5.9.0
 %define		kaname		kamoso
 Summary:	Kamoso
 Name:		ka5-%{kaname}
-Version:	18.12.0
+Version:	18.12.1
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/applications/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	f4446749b86a5911e3796070208f1aa9
+# Source0-md5:	ccc0a1d0515eb52ed4b9e4b810e363ea
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5Gui-devel
@@ -29,6 +29,7 @@ BuildRequires:	kf5-kdoctools-devel >= 5.48.0
 BuildRequires:	kf5-ki18n-devel >= 5.48.0
 BuildRequires:	kf5-kio-devel >= 5.48.0
 BuildRequires:	kf5-purpose-devel >= 5.53.0
+BuildRequires:	ninja
 BuildRequires:	qt5-build >= %{qtver}
 BuildRequires:	rpmbuild(macros) >= 1.164
 BuildRequires:	shared-mime-info
@@ -47,14 +48,14 @@ webcam.
 install -d build
 cd build
 %cmake \
+	-G Ninja \
 	-DKDE_INSTALL_USE_QT_SYS_PATHS=ON \
 	..
-%{__make}
+%ninja_build
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__make} -C build install \
-	DESTDIR=$RPM_BUILD_ROOT
+%ninja_install -C build
 
 %find_lang %{kaname} --all-name --with-kde
 
@@ -75,3 +76,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_iconsdir}/hicolor/scalable/actions/shoot.svgz
 %{_iconsdir}/hicolor/scalable/apps/kamoso.svgz
 %{_datadir}/metainfo/org.kde.kamoso.appdata.xml
+%{_desktopdir}/org.kde.kamoso.desktop
