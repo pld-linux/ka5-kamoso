@@ -1,15 +1,15 @@
-%define		kdeappsver	21.04.2
+%define		kdeappsver	21.04.3
 %define		kframever	5.56
 %define		qtver		5.9.0
 %define		kaname		kamoso
 Summary:	Kamoso
 Name:		ka5-%{kaname}
-Version:	21.04.2
+Version:	21.04.3
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	54a572269bd9e8a6e8c929e711aea599
+# Source0-md5:	e3adabed451f18bc188a865609196ffa
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5Gui-devel
