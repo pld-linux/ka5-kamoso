@@ -42,6 +42,10 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Kamoso is an application to take pictures and videos out of your
 webcam.
 
+%description -l pl.UTF-8
+Kamoso jest aplikacją do robienia zdjęć i ściągania video z Twojej
+kamery internetowej.
+
 %prep
 %setup -q -n %{kaname}-%{version}
 
