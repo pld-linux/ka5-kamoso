@@ -1,15 +1,15 @@
-%define		kdeappsver	21.12.2
+%define		kdeappsver	21.12.3
 %define		kframever	5.56
 %define		qtver		5.9.0
 %define		kaname		kamoso
 Summary:	Kamoso
 Name:		ka5-%{kaname}
-Version:	21.12.2
+Version:	21.12.3
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	76893a2a873e47af45c9a7888c207c4b
+# Source0-md5:	da68eaea115035292bbe46e7669a1eb4
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5Gui-devel
@@ -24,6 +24,7 @@ BuildRequires:	gettext-devel
 BuildRequires:	glib2-devel
 BuildRequires:	gobject-introspection-devel
 BuildRequires:	gstreamer-devel >= 1.1.90
+BuildRequires:	gstreamer-gl-devel >= 1.1.90
 BuildRequires:	kf5-extra-cmake-modules >= %{kframever}
 BuildRequires:	kf5-kconfig-devel >= %{kframever}
 BuildRequires:	kf5-kdoctools-devel >= %{kframever}
