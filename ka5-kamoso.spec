@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	21.12.3
+%define		kdeappsver	22.04.0
 %define		kframever	5.56
 %define		qtver		5.9.0
 %define		kaname		kamoso
 Summary:	Kamoso
 Name:		ka5-%{kaname}
-Version:	21.12.3
+Version:	22.04.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	da68eaea115035292bbe46e7669a1eb4
+# Source0-md5:	9aab8461c462a90cd0616f25a3a49e58
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5Gui-devel
@@ -47,8 +47,8 @@ Kamoso is an application to take pictures and videos out of your
 webcam.
 
 %description -l pl.UTF-8
-Kamoso jest aplikacją do robienia zdjęć i ściągania video z Twojej
-kamery internetowej.
+Kamoso jest aplikacją do robienia zdjęć i ściągania video z
+Twojej kamery internetowej.
 
 %prep
 %setup -q -n %{kaname}-%{version}
@@ -89,6 +89,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_iconsdir}/hicolor/32x32/apps/kamoso.png
 %{_iconsdir}/hicolor/48x48/apps/kamoso.png
 %{_iconsdir}/hicolor/64x64/apps/kamoso.png
+%{_iconsdir}/hicolor/128x128/apps/kamoso.png
 %{_iconsdir}/hicolor/scalable/actions/burst.svgz
 %{_iconsdir}/hicolor/scalable/apps/kamoso.svgz
 %{_datadir}/metainfo/org.kde.kamoso.appdata.xml
